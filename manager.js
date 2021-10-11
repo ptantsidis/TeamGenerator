@@ -1,1 +1,5 @@
-manager.js
+const Manager = require('../manager');
+
+describe('Manager'), () => {
+        describe('')
+}
