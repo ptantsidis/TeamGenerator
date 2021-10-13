@@ -6,3 +6,18 @@ header {
     background-color: blueviolet ;
     /* color: white;    */
 }
+.card { 
+    border-style: solid;
+    border-width: .2rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    /* max-width: 20%; */
+}
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}

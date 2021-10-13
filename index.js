@@ -4,8 +4,8 @@ const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 const generateHTML = require("./util/generateHTML")
 const fs = require('fs');
+const { magentaBright } = require("chalk");
 
-const finalTeam = []
 const managerArray = []
 const internArray = []
 const engineerArray = []
@@ -24,31 +24,8 @@ var empQuestions = [{
     type: 'input',
     name: 'email',
     message: "Email?",
-
 }]
 
-
-function toStart() {
-    const questions = [{
-
-        type: 'rawlist',
-        name: 'role',
-        message: "What type of Team memeber would you like to add?",
-        choices: ['Employee', 'Manager', 'Engineer', 'Intern'],
-    }]
-
-
-    inquirer.prompt(questions).then(async function (response) {
-        //loop through the questions before getting into the final part
-        //using a function to call the question whenever you need to
-        //have array o f employees to send to generateHTML
-        //in generateHTML create a for loop to add the new employees to the cards
-        finalTeam.push(response)
-        console.log(finalTeam)
-        addOrStop()
-
-    });
-}
 async function addManager() {
     let userinput =  await inquirer.prompt(empQuestions)
     inquirer.prompt([{
@@ -56,14 +33,11 @@ async function addManager() {
         name: 'office',
         message: "Office Number?",
     }]).then(function (response) {
-    //    console.log(response,userinput)
     let newManager = new Manager (userinput.name, userinput.id, userinput.email, response.office)
     managerArray.push(newManager);
-        addOrStop()
-
+       addOrStop()
     })
 }
-
 
 async function addEngineer() {
     let userinput =  await inquirer.prompt(empQuestions)
@@ -72,11 +46,9 @@ async function addEngineer() {
         name: 'gitHub',
         message: "GitHub User?",
     }]).then(function (response) {
-    //    console.log(response,userinput)
-    let newEngineer = new Engineer (userinput.name, userinput.id, userinput.email, response.gitHub)
+    let newEngineer = new Engineer (userinput.name, userinput.id, userinput.email, userinput.role, response.gitHub)
     engineerArray.push(newEngineer);
         addOrStop()
-
     })
 }
 
@@ -87,18 +59,16 @@ async function addIntern() {
         name: 'schoolName',
         message: "School Name?",
     }]).then(function (response) {
-    //    console.log(response,userinput)
     let newIntern = new Intern (userinput.name, userinput.id, userinput.email, response.schoolName)
     internArray.push(newIntern);
         addOrStop()
-
     })
 }
     function addOrStop() {
         inquirer.prompt([{
             type: 'rawlist',
             name: 'next',
-            message: "Add another Team memeber?",
+            message: "Add Team member?",
             choices: ['Manager', 'Engineer', 'Intern', 'No']
         }]).then(function (response) {
             switch (response.next) {
@@ -118,16 +88,45 @@ async function addIntern() {
         })
     }
 
-    async function printHTML() {
-        //change response inside generateHTML for finalTeam array
-        console.log(finalTeam)
-        // let result = await generateHTML(finalTeam)
-        // fs.writeFileSync("./dist/index.html", result, function (err) {
-        //     if (err) throw err;
-        // })
-        console.log(managerArray);
-        console.log(internArray);
-        console.log(engineerArray);
+    async function printHTML() {  
+        let manHTMLcode = ""
+        managerArray.forEach(response =>{
+            manHTMLcode +=` 
+            <div class="col-md-3">
+                <div class="card">
+                <h2>Manager</h2>
+                    <h2>${response.name}</h2>
+                    <div class ="email">Email: ${response.email}</div>
+                    <div class ="office-number">Office Number: ${response.officeNumber}</div>
+                </div>
+            </div>`
+        })     
+        engineerArray.forEach(response =>{
+            manHTMLcode += `
+            <div class="col-md-3">
+                <div class="card">
+                <h2>Engineer</h2>
+                    <h2>${response.name}</h2>
+                    <div class ="email">Email: ${response.email}</div>
+                    <div class ="github-user">GitHub User Name: ${response.gitHub}</div>
+                </div>
+            </div>`
+        })
+        internArray.forEach(response =>{
+            manHTMLcode += ` 
+                <div class="col-md-3">
+                <div class="card">
+                <h2>Intern</h2>
+                    <h2>${response.name}</h2>
+                    <div class ="email">Email: ${response.email}</div>
+                    <div class = "school-name">School Name: ${response.schoolName}</div>
+                </div>
+            </div>`
+        })     
+        let result = await generateHTML(manHTMLcode)
+        fs.writeFileSync("./dist/index.html", result, function (err) {
+        if (err) throw err;
+     })
         console.log("Index HTML Completed")
     }       
 

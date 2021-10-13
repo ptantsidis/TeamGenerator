@@ -1,7 +1,7 @@
 const Employee = require('../employee');
 
 describe('Employee', () => {
-    describe('fname', () => {
+    describe('name', () => {
         it('should throw an error if no valid argument', () => {
             const cb = () => new Employee();
             expect(cb).toThrow();
@@ -18,10 +18,10 @@ describe('Employee', () => {
 });
 
 describe('Employee', () => {
-    describe('empId', () => {
+    describe('Id', () => {
         it("should throw an error if 'id' is not a number", () => {
         const cb = () => new Employee.empId();
-        const err = new Error("Expected parameter 'empId' to be a non-negative number");
+        const err = new Error("Expected parameter 'Id' to be a non-negative number");
         expect(cb).toThrowError(err);
         })
     })

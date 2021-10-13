@@ -1,11 +1,4 @@
 async function generateHTML(response) {
-
-   // add for loop to insert seperate cards
-
-
-
-
-
     return ` 
 <!DOCTYPE html>
 <html lang="en-us">
@@ -25,41 +18,8 @@ async function generateHTML(response) {
     </header>
     <main>
         <div class="row">
-            <div class="col-md-3" id="1">
-                <div class="card">
-                    <h2>${response.fname}</h2>
-                    <div class ="role">${response.role}</div>
-                    <div class = "email">{${response.email}}</div>
-                </div>
-            </div>
-            <div class="col-md-3" id="2">
-                <div class="card">
-                    <h2>${response.fname}</h2>
-                    <div class ="role">${response.role}</div>
-                    <div class = "email">{${response.email}}</div>
-                </div>
-            </div>
-            <div class="col-md-3" id="3">
-                <div class="card">
-                    <h2>${response.fname}</h2>
-                    <div class ="role">${response.role}</div>
-                    <div class = "email">{${response.email}}</div>
-                </div>
-            </div>
-            <div class="col-md-3" id="4">
-                <div class="card">
-                    <h2>${response.fname}</h2>
-                    <div class ="role">${response.role}</div>
-                    <div class = "email">{${response.email}}</div>
-                </div>
-            <div class="col-md-3" id="5">
-                <div class="card">
-                    <h2>${response.fname}</h2>
-                    <div class ="role">${response.role}</div>
-                    <div class = "email">{${response.email}}</div>
-                </div>
-            </div>
-        </div
+            ${response}
+        </div>
     </main>
 </body>
 </html>`
