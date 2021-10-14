@@ -1,0 +1,29 @@
+{
+  "name": "TeamGenerator",
+  "version": "1.0.0",
+  "description": "Creates web pages loaded with manually loaded data through node.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  },
+  "devDependencies": {
+    "jest": "^27.2.5"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ptantsidis/TeamGenerator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ptantsidis/TeamGenerator/issues"
+  },
+  "homepage": "https://github.com/ptantsidis/TeamGenerator#readme"
+}
