@@ -9,4 +9,7 @@ Create geneerateHTML .js to format the the index.html allowing for the inserts o
 Customize CSS with own photo back ground and icon representing the classes.
 Icons from Google.com
 gitHub url (:https://github.com/ptantsidis/TeamGenerator.git)
-screen image (/dist/myTeam.png)  
+Create screenCastify video showing all 4 test passing individually. 
+Inputs for all classes and the final HTML page on completion.
+https://watch.screencastify.com/v/uPoyaVMzAM5mc9VgRn7Q
+screen image ![myTeam](https://user-images.githubusercontent.com/90045665/137412080-2605c764-6c35-499e-b229-2df60a93fb76.png)
