@@ -27,9 +27,9 @@ ____
 
   ## Usage
   Fromalized structure of Employee Team visible in a Web Page. Create tests for each class - Employee, Manager, Intern and Engineer through java script.
-  Create prompts for each class and the datail field of each class.
+  Create prompts for each class and the detail field of each class.
   Push each completed class into its array.
-  Create generate HTML.js to format the the index.html allowing for the inserts of each class' array.
+  Create generate HTML.js to format the index.html allowing for the inserts of each class' array.
   Customize CSS with own photo back ground and icon representing the classes.
 
   ## Start
