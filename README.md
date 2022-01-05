@@ -28,7 +28,7 @@ ____
   NPM, Inquirer, Jest (for Testing), HTML, Icons from Googles.com
 
   ## Usage
-  Fromalized structure of Employee Team visible in a Web Page. Create tests for each class - Employee, Manager, Intern and Engineer through java script. Create prompts for each   class and the detail field of each class. Push each completed class into its array. Create generate HTML.js to format the index.html allowing for the inserts of each class       into an array. Customize CSS with own photo back ground and icon representing the classes.
+  Formalized structure of Employee Team visible in a Web Page. Create tests for each class - Employee, Manager, Intern and Engineer through java script. Create prompts for each   class and the detail field of each class. Push each completed class into its array. Create generate HTML.js to format the index.html allowing for the inserts of each class       into an array. Customize CSS with own photo back ground and icon representing the classes.
 
   ## Start
   node index.js
