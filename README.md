@@ -6,8 +6,6 @@ ____
 ____
   [Installation](#installation)
 
-  *[Description](#desc)
-
   *[Usage](#usage)
 
   *[Start](#start)
